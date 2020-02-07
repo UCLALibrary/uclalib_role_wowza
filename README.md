@@ -84,4 +84,4 @@ Please see [LICENSE](LICENSE)
 Author Information
 ------------------
 
-GitHub [issues](https://github.com/UCLALibrary/uclalib_role_elasticsearch/issues) is open in case you'd like to file a ticket or make a suggestion. You can also contact Anthony Vuong at <a href="mailto:avuong@cachemeoutside.io">avuong@cachemeoutside.io</a> if you have a question about the project.
+GitHub [issues](https://github.com/UCLALibrary/uclalib_role_wowza/issues) is open in case you'd like to file a ticket or make a suggestion. You can also contact Anthony Vuong at <a href="mailto:avuong@cachemeoutside.io">avuong@cachemeoutside.io</a> if you have a question about the project.
