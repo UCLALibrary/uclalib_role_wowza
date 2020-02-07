@@ -1,0 +1,9 @@
+---
+- name: Install Wowza Dependencies
+  include_tasks: install-dependencies.yml
+
+- name: Create JKS from ssl certificate and key
+  include_tasks: setup-jks.yml
+
+- name: Download Wowza into directory
+  include_tasks: download-wowza.yml

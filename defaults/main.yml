@@ -1,0 +1,24 @@
+---
+
+# Wowza info
+wowza_version: 4.7.8
+wowza_linux_download_url: https://www.wowza.com/downloads/WowzaStreamingEngine-{{ wowza_version_path.stdout }}/WowzaStreamingEngine-{{ wowza_version }}-linux-x64-installer.run
+wowza_download_path: /opt/wowza/src
+
+# Wowza requires Java/OpenJDK 9 - 12 support
+java_version: java-11-openjdk
+
+# Other utilities and dependencies Wowza needs
+dependency_pkgs:
+  - which
+  - openssl
+  - openssl-libs
+
+# JKS Info
+jks_root_path: "{{ wowza_download_path }}/ssl"
+jks_crt_src_path: "instance.crt"
+jks_key_src_path: "instance.key"
+jks_crt_dest_path: "{{ jks_root_path }}/{{ ansible_hostname }}.crt"
+jks_key_dest_path: "{{ jks_root_path }}/{{ ansible_hostname }}.key"
+jks_dest_path: "{{ jks_root_path }}/{{ ansible_hostname }}.jks"
+jks_password: "example"

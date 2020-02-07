@@ -1,0 +1,11 @@
+---
+- name: Install OpenJDK
+  yum:
+    name: "{{ java_version }}"
+    state: present
+    disable_excludes: all
+
+- name: Install other Wowza dependencies
+  yum:
+    name: "{{ dependency_pkgs }}"
+    state: present

@@ -1,0 +1,26 @@
+---
+sudo: required
+language: python
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-get -qq update
+
+install:
+  - pip3 install molecule docker
+
+script:
+  - molecule test
+
+notifications:
+  email:
+    recipients:
+      - avuong@cachemeoutside.io
+    on_success: change
+    on_failure: change

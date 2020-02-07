@@ -1,0 +1,27 @@
+---
+
+- name: Convert version dots to dashes
+  shell: |
+    set -o pipefail
+    echo "{{ wowza_version }}" | sed "s/\./-/g"
+  args:
+    executable: /bin/bash
+  register: wowza_version_path
+  changed_when: false
+
+- name: Create location to download Wowza installation script
+  file:
+    path: "{{ wowza_download_path }}"
+    owner: root
+    group: root
+    mode: 0755
+    state: directory
+
+- name: Download Wowza into directory
+  get_url:
+    url: "{{ wowza_linux_download_url }}"
+    dest: "{{ wowza_download_path }}"
+    mode: 0755
+    owner: root
+    group: root
+  when: wowza_version_path is defined
