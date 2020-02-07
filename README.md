@@ -1,4 +1,4 @@
-UCLA Library Wowza Role
+UCLA Library Wowza Role [![Build Status](https://travis-ci.com/UCLALibrary/uclalib_role_wowza.svg?branch=master)](https://travis-ci.com/UCLALibrary/uclalib_role_wowza)
 =========
 
 Ansible role to install Wowza. Due to licensing restrictions of Wowza, this role does not currently support a full installation of Wowza. You'll need to request a [silent key license](https://www.wowza.com/docs/how-to-install-and-configure-wowza-streaming-engine) if you want to install Wowza unattended.
