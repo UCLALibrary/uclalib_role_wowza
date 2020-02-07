@@ -1,0 +1,42 @@
+---
+- name: Create SSL directory
+  file:
+    path: "{{ jks_root_path }}"
+    owner: root
+    group: root
+    state: directory
+    mode: 0755
+
+- name: Upload Certificate
+  copy:
+    src: "{{ jks_crt_src_path }}"
+    dest: "{{ jks_crt_dest_path }}"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Upload Key
+  copy:
+    src: "{{ jks_key_src_path }}"
+    dest: "{{ jks_key_dest_path }}"
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Get JKS certificate content
+  slurp:
+    src: "{{ jks_crt_dest_path }}"
+  register: jks_crt_slurp
+
+- name: Get JKS key content
+  slurp:
+    src: "{{ jks_key_dest_path }}"
+  register: jks_key_slurp
+
+- name: Create JKS
+  java_keystore:
+    name: wowza
+    certificate: "{{ jks_crt_slurp['content'] | b64decode }}"
+    private_key: "{{ jks_key_slurp['content'] | b64decode }}"
+    password: "{{ jks_password }}"
+    dest: "{{ jks_dest_path }}"

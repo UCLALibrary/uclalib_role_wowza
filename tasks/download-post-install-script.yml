@@ -1,0 +1,16 @@
+---
+- name: Upload tomcat.properties template
+  template:
+    src: tomcat.properties.j2
+    dest: "{{ wowza_download_path }}/tomcat.properties"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Upload post install script to wowza download path
+  template:
+    src: post-wowza-install.sh
+    dest: "{{ wowza_download_path }}"
+    owner: root
+    group: root
+    mode: 0755

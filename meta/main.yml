@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Anthony Vuong
+  description: A role to install Wowza
+  company: UCLA Library
+  license: See License File
+  min_ansible_version: 2.7
+  platforms:
+    - name: CentOS
+      versions:
+        - 7
