@@ -7,3 +7,6 @@
 
 - name: Download Wowza into directory
   include_tasks: download-wowza.yml
+
+- name: Upload post installation tasks to be manually executed after installation wizard
+  include_tasks: download-post-install-script.yml
