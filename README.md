@@ -70,9 +70,11 @@ This role can be ran with the defaults, but should be customized according to yo
          - { role: uclalib_role_wowza }
 
 After the playbook, you'll install Wowza using their provided wizard. Follow the instructions prompted in their installation guide.
+
     /opt/wowza/src/WowzaStreamingEngine-4.7.8-linux-x64-installer.run
 
 After installing Wowza, run the post installation script to configure HTTPS on Wowza and the Manager service.
+
     /opt/wowza/src/post-wowza-install.sh
 
 License
